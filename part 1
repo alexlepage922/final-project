@@ -1,0 +1,19 @@
+import time
+# Introduction to the game
+def introduction():
+    print("Welcome to the Escape Room!")
+    print("You find yourself trapped in a room. Your goal is to escape.")
+    print("Look around, find clues, and solve puzzles to find the key and unlock the door.")
+    print("Let's begin!\n")
+# Room description
+def room_description():
+    print("You're in a room with a desk, a painting on the wall, and a locked door.")
+# Player choices
+def player_choices():
+    print("What would you like to do?")
+    print("1. Check the desk")
+    print("2. Examine the painting")
+    print("3. Inspect the door")
+    print("4. Try to unlock the door with a code")
+    choice = input("Enter your choice (1-4): ")
+    return choice
