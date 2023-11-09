@@ -5,9 +5,11 @@ def introduction():
     print("You find yourself trapped in a room. Your goal is to escape.")
     print("Look around, find clues, and solve puzzles to find the key and unlock the door.")
     print("Let's begin!\n")
+
 # Room description
 def room_description():
     print("You're in a room with a desk, a painting on the wall, and a locked door.")
+
 # Player choices
 def player_choices():
     print("What would you like to do?")
@@ -17,3 +19,21 @@ def player_choices():
     print("4. Try to unlock the door with a code")
     choice = input("Enter your choice (1-4): ")
     return choice
+
+#Action Choices 
+def check_desk():
+    print("You found a piece of paper with the numbers 5832")
+    
+def examine_painting():
+    print("The painting looks unusual. You notice a small safe behind it.")
+    
+def inspect_door():
+    print("The door is locked. There's a keypad next to it.")
+    
+def try_unlock_door():
+    if code == "5832":
+        print("The door unlocks! You have escaped!")
+        return True
+    else:
+        print("The code is incorrect. The door remains locked.")
+        return False
