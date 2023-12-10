@@ -1,4 +1,5 @@
 import time
+
 # Introduction to the game
 def introduction():
     print("Welcome to the Escape Room!")
@@ -20,20 +21,44 @@ def player_choices():
     choice = input("Enter your choice (1-4): ")
     return choice
 
-#Action Choices 
+# Actions for player's choices
 def check_desk():
-    print("You found a piece of paper with the numbers 5832")
-    
+    print("You found a piece of paper with some numbers: 5832.")
+
 def examine_painting():
     print("The painting looks unusual. You notice a small safe behind it.")
-    
+
 def inspect_door():
     print("The door is locked. There's a keypad next to it.")
-    
-def try_unlock_door():
+
+def try_unlock_door(code):
     if code == "5832":
-        print("The door unlocks! You have escaped!")
+        print("The door unlocks! Congratulations, you've escaped!")
         return True
     else:
         print("The code is incorrect. The door remains locked.")
         return False
+
+# Main game function
+def escape_room_game():
+    introduction()
+    room_description()
+    escaped = False
+
+    while not escaped:
+        choice = player_choices()
+
+        if choice == '1':
+            check_desk()
+        elif choice == '2':
+            examine_painting()
+        elif choice == '3':
+            inspect_door()
+        elif choice == '4':
+            code = input("Enter the code: ")
+            escaped = try_unlock_door(code)
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
+
+# Run the game
+escape_room_game()
